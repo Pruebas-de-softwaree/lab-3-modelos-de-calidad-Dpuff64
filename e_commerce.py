@@ -66,5 +66,21 @@ def menu():
         else:
             print("Invalid option.")
 
+import time
+
+def performance_test():
+    start = time.time()  
+    
+    add_to_cart(1)  
+    
+    end = time.time() 
+    elapsed = end - start
+    
+    print(f"Tiempo de respuesta: {elapsed:.4f} segundos")
+    if elapsed < 2:
+        print("✅ Cumple con RNF1 (menor a 2 segundos)")
+    else:
+        print("❌ No cumple con RNF1 (mayor a 2 segundos)")
+
 if __name__ == "__main__":
-    menu()
+    performance_test()
